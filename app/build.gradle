@@ -14,6 +14,21 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        main {
+            res {
+                srcDirs += [
+                        'src/main/res/drawable/ic',
+                        'src/main/res/drawable/icon',
+                        'src/main/res/drawable/common',
+                        'src/main/res/drawable/button',
+                        'src/main/res/drawable/shadow',
+                        'src/main/res/drawable/background',
+                ]
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

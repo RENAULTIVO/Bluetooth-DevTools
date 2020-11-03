@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="@string/app_name"
+        android:gravity="center"
+        android:textSize="26dp"
+        android:textColor="@color/lightText"
+        android:fontFamily="cursive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow android:gravity="center">
+
+            <LinearLayout
+                style="@style/Home.option">
+                <ImageView
+                    style="@style/Home.option.icon"
+                    android:src="@drawable/ic_devices"/>
+                <TextView
+                    style="@style/DefaultText"
+                    android:text="Devices"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Home.option">
+                <ImageView
+                    style="@style/Home.option.icon"
+                    android:src="@drawable/ic_server"/>
+                <TextView
+                    style="@style/DefaultText"
+                    android:text="Server"/>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+
+            <LinearLayout
+                style="@style/Home.option">
+                <ImageView
+                    style="@style/Home.option.icon"
+                    android:src="@drawable/ic_settings"/>
+                <TextView
+                    style="@style/DefaultText"
+                    android:text="Settings"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Home.option">
+                <ImageView
+                    style="@style/Home.option.icon"
+                    android:src="@drawable/ic_storage"/>
+                <TextView
+                    style="@style/DefaultText"
+                    android:text="Saved Data"/>
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
