@@ -23,6 +23,7 @@
         <TableRow android:gravity="center">
 
             <LinearLayout
+                android:id="@+id/devicesListButton"
                 style="@style/Home.option">
                 <ImageView
                     style="@style/Home.option.icon"
@@ -33,6 +34,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/serverButton"
                 style="@style/Home.option">
                 <ImageView
                     style="@style/Home.option.icon"
@@ -46,8 +48,8 @@
 
         <TableRow android:gravity="center">
 
-
             <LinearLayout
+                android:id="@+id/settingsButton"
                 style="@style/Home.option">
                 <ImageView
                     style="@style/Home.option.icon"
@@ -58,13 +60,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/storageButton"
                 style="@style/Home.option">
                 <ImageView
                     style="@style/Home.option.icon"
                     android:src="@drawable/ic_storage"/>
                 <TextView
                     style="@style/DefaultText"
-                    android:text="Saved Data"/>
+                    android:text="Storage"/>
             </LinearLayout>
 
         </TableRow>
