@@ -5,7 +5,8 @@
 ## Project in progress
 
 - [ ] Connect to new devices
-- [ ] Access devices info
+- [ ] Access device info
 - [ ] Create a Bluetooth Server
 - [ ] Send, receive and parse data in different types
 - [ ] Set and save connection settings for each device
+- [ ] Allow to saving received and sent data
