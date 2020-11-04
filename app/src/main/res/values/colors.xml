@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#111111</color>
     <color name="colorAccent">#444444</color>
     <color name="lightText">#DDDDDD</color>
+    <color name="colorGray">#333333</color>
+    <color name="commonTextColor">#DDDDDD</color>
+    <color name="whiteTextColor">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
 </resources>
