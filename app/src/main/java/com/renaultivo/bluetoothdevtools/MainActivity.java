@@ -2,14 +2,19 @@ package com.renaultivo.bluetoothdevtools;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
+
+import androidx.annotation.RequiresApi;
 
 import com.renaultivo.bluetoothdevtools.DialogScreens.DevicesListDialog;
 import com.renaultivo.bluetoothdevtools.DialogScreens.ServerDialog;
 import com.renaultivo.bluetoothdevtools.DialogScreens.SettingsDialog;
 import com.renaultivo.bluetoothdevtools.DialogScreens.StorageDialog;
+import com.renaultivo.bluetoothdevtools.elements.DefaultButton;
 
 public class MainActivity extends Activity {
 
@@ -27,6 +32,7 @@ public class MainActivity extends Activity {
         LinearLayout storageButton = findViewById(R.id.storageButton);
 
         devicesListButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.R)
             @Override
             public void onClick(View view) {
                 new DevicesListDialog(activity);
@@ -34,6 +40,7 @@ public class MainActivity extends Activity {
         });
 
         serverButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.R)
             @Override
             public void onClick(View view) {
                 new ServerDialog(activity);
@@ -41,6 +48,7 @@ public class MainActivity extends Activity {
         });
 
         settingsButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.R)
             @Override
             public void onClick(View view) {
                 new SettingsDialog(activity);
@@ -48,6 +56,7 @@ public class MainActivity extends Activity {
         });
 
         storageButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.R)
             @Override
             public void onClick(View view) {
                 new StorageDialog(activity);
