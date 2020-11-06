@@ -3,8 +3,10 @@ package com.renaultivo.bluetoothdevtools.DialogScreens;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Build;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
 
@@ -32,6 +34,14 @@ public class StorageDialog extends DefaultDialogScreen {
         setContentView(R.layout.storage_dialog);
 
         masterContainer = findViewById(R.id.masterContainer);
+
+        Button closeButton = findViewById(R.id.closeButton);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                close();
+            }
+        });
 
         create();
         show();

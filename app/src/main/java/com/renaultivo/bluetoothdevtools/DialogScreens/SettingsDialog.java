@@ -36,7 +36,6 @@ public class SettingsDialog extends DefaultDialogScreen {
         masterContainer = findViewById(R.id.masterContainer);
 
         Button closeButton = findViewById(R.id.closeButton);
-
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
