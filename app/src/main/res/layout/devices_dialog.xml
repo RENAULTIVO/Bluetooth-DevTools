@@ -57,22 +57,22 @@
 
             </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/devicesList"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/devicesList"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-        </LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
     <RelativeLayout
-        android:background="@drawable/shadow_bottom"
+        android:background="@drawable/shadow_bottom_border"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="70dp"

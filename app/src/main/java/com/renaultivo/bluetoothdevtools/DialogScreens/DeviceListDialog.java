@@ -31,7 +31,7 @@ import com.renaultivo.bluetoothdevtools.elements.DeviceElement;
 
 import java.util.Set;
 
-public class DevicesListDialog extends DefaultDialogScreen {
+public class DeviceListDialog extends DefaultDialogScreen {
 
     Activity activity;
     BluetoothAdapter bluetoothAdapter = null;
@@ -80,7 +80,7 @@ public class DevicesListDialog extends DefaultDialogScreen {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.R)
-    public DevicesListDialog(Activity activity) {
+    public DeviceListDialog(Activity activity) {
         super(activity);
         this.activity = activity;
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();

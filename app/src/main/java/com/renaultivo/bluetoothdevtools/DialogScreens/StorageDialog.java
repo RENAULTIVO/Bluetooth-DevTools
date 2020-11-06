@@ -11,7 +11,7 @@ import androidx.annotation.RequiresApi;
 import com.renaultivo.bluetoothdevtools.BuildConfig;
 import com.renaultivo.bluetoothdevtools.R;
 
-public class StorageDialog extends Dialog {
+public class StorageDialog extends DefaultDialogScreen {
 
     Activity activity;
 
@@ -31,8 +31,11 @@ public class StorageDialog extends Dialog {
 
         setContentView(R.layout.storage_dialog);
 
+        masterContainer = findViewById(R.id.masterContainer);
+
         create();
         show();
+        open();
     }
 
 }
