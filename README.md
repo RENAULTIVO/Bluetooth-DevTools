@@ -9,4 +9,4 @@
 - [ ] Create a Bluetooth Server
 - [ ] Send, receive and parse data in different types
 - [ ] Set and save connection settings for each device
-- [ ] Allow to saving received and sent data
+- [ ] Allow storage of received and sent data
