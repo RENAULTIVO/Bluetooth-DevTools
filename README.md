@@ -2,7 +2,7 @@
 - Android app with Bluetooth tools.
 - Manage and create Bluetooth connections.
 
-## Project in progress
+## Project goals
 
 - [ ] Connect to new devices
 - [x] Access devices info
