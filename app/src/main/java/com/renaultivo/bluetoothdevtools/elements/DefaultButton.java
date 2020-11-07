@@ -3,11 +3,7 @@ package com.renaultivo.bluetoothdevtools.elements;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
-import android.view.Gravity;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.renaultivo.bluetoothdevtools.R;
 

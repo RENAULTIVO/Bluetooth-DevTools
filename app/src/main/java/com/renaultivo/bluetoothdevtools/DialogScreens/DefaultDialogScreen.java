@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import com.renaultivo.bluetoothdevtools.BuildConfig;
-import com.renaultivo.bluetoothdevtools.R;
 
 public class DefaultDialogScreen extends Dialog {
 

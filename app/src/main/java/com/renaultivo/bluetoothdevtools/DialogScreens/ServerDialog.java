@@ -1,7 +1,6 @@
 package com.renaultivo.bluetoothdevtools.DialogScreens;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.os.Build;
 import android.view.View;
 import android.view.Window;

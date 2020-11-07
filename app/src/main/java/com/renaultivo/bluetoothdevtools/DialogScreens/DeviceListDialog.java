@@ -9,23 +9,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.AnimationSet;
-import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import com.renaultivo.bluetoothdevtools.BuildConfig;
 import com.renaultivo.bluetoothdevtools.R;
 import com.renaultivo.bluetoothdevtools.elements.DeviceElement;
 
@@ -140,6 +130,5 @@ public class DeviceListDialog extends DefaultDialogScreen {
         }, new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED));
 
     }
-
 
 }
