@@ -1,7 +1,6 @@
 package com.renaultivo.bluetoothdevtools.DialogScreens;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -27,19 +26,23 @@ public class DeviceListDialog extends DefaultDialogScreen {
     BluetoothAdapter bluetoothAdapter = null;
 
     LinearLayout deviceListParent;
-    LinearLayout turnOnBluetoothBanner;
+    LinearLayout bluetoothAdvice;
     LinearLayout devicesList;
 
-    void getDevicesList() {
+    Button bluetoothButton;
+    ImageButton closeButton;
 
-        Set<BluetoothDevice> devices = bluetoothAdapter.getBondedDevices();
+    Set<BluetoothDevice> getDevicesList() {
+        return bluetoothAdapter.getBondedDevices();
+    }
+
+    void mountDeviceList(Set<BluetoothDevice> devices) {
+
+        if (bluetoothAdvice.getParent() != null) {
+            hideBluetoothAdvice();
+        }
 
         devicesList.removeAllViews();
-
-        if (turnOnBluetoothBanner.getParent() != null) {
-            turnOnBluetoothBanner.setVisibility(View.INVISIBLE);
-            deviceListParent.removeView(turnOnBluetoothBanner);
-        }
 
         int fadeInTime = 150;
 
@@ -60,13 +63,26 @@ public class DeviceListDialog extends DefaultDialogScreen {
 
     void showBluetoothAdvice() {
         devicesList.removeAllViews();
-        deviceListParent.addView(turnOnBluetoothBanner);
-        turnOnBluetoothBanner.setVisibility(View.VISIBLE);
+        deviceListParent.addView(bluetoothAdvice);
+        bluetoothAdvice.setVisibility(View.VISIBLE);
+    }
+
+    void hideBluetoothAdvice() {
+        bluetoothAdvice.setVisibility(View.INVISIBLE);
+        deviceListParent.removeView(bluetoothAdvice);
     }
 
     void requestBluetoothEnable() {
         Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         activity.startActivity(intent);
+    }
+
+    void getUsedElements() {
+        closeButton = findViewById(R.id.closeButton);
+        deviceListParent = findViewById(R.id.deviceListParent);
+        bluetoothAdvice = findViewById(R.id.turnOnBluetoothBanner);
+        devicesList = findViewById(R.id.devicesList);
+        bluetoothButton = findViewById(R.id.enableBluetoothButton);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.R)
@@ -77,12 +93,10 @@ public class DeviceListDialog extends DefaultDialogScreen {
 
         setContentView(R.layout.devices_dialog);
 
-        this.masterContainer = findViewById(R.id.masterContainer);
-        ImageButton closeButton = findViewById(R.id.closeButton);
-        deviceListParent = findViewById(R.id.deviceListParent);
-        turnOnBluetoothBanner = findViewById(R.id.turnOnBluetoothBanner);
-        devicesList = findViewById(R.id.devicesList);
-        Button enableBluetoothButton = findViewById(R.id.enableBluetoothButton);
+        masterContainer = findViewById(R.id.masterContainer);
+
+        getUsedElements();
+        setBluetoothEventReceivers();
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,25 +105,24 @@ public class DeviceListDialog extends DefaultDialogScreen {
             }
         });
 
-        enableBluetoothButton.setOnClickListener(new View.OnClickListener() {
+        bluetoothButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 requestBluetoothEnable();
             }
         });
 
-        setReceivers();
-
         if (bluetoothAdapter.isEnabled()) {
-            getDevicesList();
+            mountDeviceList(getDevicesList());
         }
 
         create();
         show();
         open();
+
     }
 
-    void setReceivers() {
+    void setBluetoothEventReceivers() {
 
         activity.registerReceiver(new BroadcastReceiver() {
             @Override

@@ -3,13 +3,10 @@ package com.renaultivo.bluetoothdevtools.DialogScreens;
 import android.app.Activity;
 import android.os.Build;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
 
-import com.renaultivo.bluetoothdevtools.BuildConfig;
 import com.renaultivo.bluetoothdevtools.R;
 
 public class StorageDialog extends DefaultDialogScreen {
@@ -20,15 +17,6 @@ public class StorageDialog extends DefaultDialogScreen {
     public StorageDialog(Activity activity) {
         super(activity);
         this.activity = activity;
-
-        if (BuildConfig.VERSION_CODE >= Build.VERSION_CODES.R) {
-            getWindow().setDecorFitsSystemWindows(false);
-        } else {
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        }
-
-        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         setContentView(R.layout.storage_dialog);
 
@@ -45,6 +33,7 @@ public class StorageDialog extends DefaultDialogScreen {
         create();
         show();
         open();
+
     }
 
 }

@@ -24,6 +24,7 @@ public class DefaultDialogScreen extends Dialog {
     @RequiresApi(api = Build.VERSION_CODES.R)
     public DefaultDialogScreen(@NonNull Context context) {
         super(context);
+
         if (BuildConfig.VERSION_CODE >= Build.VERSION_CODES.R) {
             getWindow().setDecorFitsSystemWindows(false);
         } else {
@@ -32,6 +33,7 @@ public class DefaultDialogScreen extends Dialog {
 
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
     }
 
     void open() {
